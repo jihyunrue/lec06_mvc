@@ -35,16 +35,16 @@ public class UserCreateEndServlet extends HttpServlet {
 		u.setUser_name(name);
 		
 		int result = new UserService().createUser(u); 
-//		RequestDispatcher view = request.getRequestDispatcher("/view/user/create_fail.jsp");
-//		if(result > 0) {
-//			 view = request.getRequestDispatcher("/views/user/create_success.jsp");
-//		}
-//		view.forward(request,response);
+		RequestDispatcher view = request.getRequestDispatcher("/view/user/create_fail.jsp");
 		if(result > 0) {
-			System.out.println("성공");
-		}else {
-			System.out.println("실패");
+			 view = request.getRequestDispatcher("/views/user/create_success.jsp");
 		}
+		view.forward(request,response);
+//		if(result > 0) {
+//			System.out.println("성공");
+//		}else {
+//			System.out.println("실패");
+//		}
 	}
 
 	
